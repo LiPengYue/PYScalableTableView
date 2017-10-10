@@ -18,4 +18,12 @@
 - (NSString *) modelArrayPropertyName {
     return nil;
 }
+
+
+- (NSString *)imageName {
+    if (!_imageName) {
+        _imageName = @"3";
+    }
+    return _imageName;
+}
 @end

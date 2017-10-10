@@ -8,10 +8,10 @@
 
 #import "PYTestCell2.h"
 #import "UITableViewCell+ScalableTableViewCell_Extension.h"
-
+#import "Masonry.h"
 @interface PYTestCell2 ()
-@property (nonatomic,strong) UILabel *label;
-@property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) UILabel *labelV;
+@property (nonatomic,strong) UIImageView *imageV;
 @end
 
 @implementation PYTestCell2
@@ -27,28 +27,37 @@
     
     ///设置数据
     [self cellSetDataFunc:^(NSObject *model) {
-        weakSelf.label.text = NSStringFromClass(model.class);
+        weakSelf.labelV.text = NSStringFromClass(model.class);
+        NSString *imageName = [model valueForKey:@"imageName"];
+        weakSelf.imageV.image = [UIImage imageNamed:imageName];
+    }];
+    ///设置自视图
+    [self setUPViews];
+}
+
+
+- (void) setUPViews {
+    
+    self.contentView.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
+    self.labelV = [[UILabel alloc]init];
+    self.labelV.textAlignment = NSTextAlignmentCenter;
+    self.labelV.textColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.4 alpha:1];
+    
+    [self.contentView addSubview:self.labelV];
+    self.imageV.backgroundColor = [UIColor colorWithRed:0.8 green:0.7 blue:0.3 alpha:1];
+    self.imageV = [[UIImageView alloc]init];
+    self.imageV.contentMode = UIViewContentModeScaleAspectFit;
+    [self.contentView addSubview:self.imageV];
+    
+    [self.imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(self.contentView).offset(8);
+        make.bottom.equalTo(self.contentView).offset(-8);
+        make.height.width.equalTo(@(80));
     }];
     
-    
-    self.contentView.backgroundColor = [UIColor redColor];
-    self.label = [[UILabel alloc]init];
-    self.label.frame = self.contentView.bounds;
-    self.label.textAlignment = NSTextAlignmentRight;
-    self.label.textColor = [UIColor whiteColor];
-//    self.label.text = @"PYTestCell_1";
-    [self.contentView addSubview:self.label];
+    [self.labelV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.top.equalTo(self.contentView);
+    }];
 }
-
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
-}
-
 @end
+

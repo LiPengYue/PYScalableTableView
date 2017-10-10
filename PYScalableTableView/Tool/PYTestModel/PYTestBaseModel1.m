@@ -33,4 +33,12 @@
     return _modelArray;
 }
 
+
+
+- (NSString *)imageName {
+    if (!_imageName) {
+        _imageName = @"1";
+    }
+    return _imageName;
+}
 @end

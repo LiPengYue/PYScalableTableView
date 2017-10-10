@@ -10,4 +10,5 @@
 
 @interface PYTestBaseModel1 : NSObject
 @property (nonatomic,strong) NSArray *modelArray;
+@property (nonatomic,copy) NSString *imageName;
 @end

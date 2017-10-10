@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		862610641F8B2DE3008A9ED7 /* ScalableTableViewDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 862610631F8B2DE3008A9ED7 /* ScalableTableViewDataManager.m */; };
+		6EEF0B5CDF52E7CF4EE48DE7 /* libPods-PYScalableTableView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E59ADEBE38E99F3F34C8A3 /* libPods-PYScalableTableView.a */; };
 		8642BA321F7A03E800032762 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8642BA311F7A03E800032762 /* AppDelegate.m */; };
 		8642BA351F7A03E800032762 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8642BA341F7A03E800032762 /* ViewController.m */; };
 		8642BA381F7A03E800032762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8642BA361F7A03E800032762 /* Main.storyboard */; };
@@ -25,8 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		862610621F8B2DE3008A9ED7 /* ScalableTableViewDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScalableTableViewDataManager.h; sourceTree = "<group>"; };
-		862610631F8B2DE3008A9ED7 /* ScalableTableViewDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScalableTableViewDataManager.m; sourceTree = "<group>"; };
+		020BF7D21E3943E95A7663E1 /* Pods-PYScalableTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYScalableTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYScalableTableView/Pods-PYScalableTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		0CE8C2B5622F5947B567F03B /* Pods-PYScalableTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYScalableTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYScalableTableView/Pods-PYScalableTableView.release.xcconfig"; sourceTree = "<group>"; };
+		54E59ADEBE38E99F3F34C8A3 /* libPods-PYScalableTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYScalableTableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8642BA2D1F7A03E800032762 /* PYScalableTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYScalableTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8642BA301F7A03E800032762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8642BA311F7A03E800032762 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EEF0B5CDF52E7CF4EE48DE7 /* libPods-PYScalableTableView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,8 @@
 			children = (
 				8642BA2F1F7A03E800032762 /* PYScalableTableView */,
 				8642BA2E1F7A03E800032762 /* Products */,
+				D019517287791E1F878F32F9 /* Pods */,
+				FE7B24656A62F06F80949080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,8 +120,6 @@
 				86A79D151F7E695400F0F3C2 /* UITableViewCell+ScalableTableViewCell_Extension.m */,
 				86C9FD021F7D07E400E91B87 /* ScalableTableView.h */,
 				86C9FD031F7D07E400E91B87 /* ScalableTableView.m */,
-				862610621F8B2DE3008A9ED7 /* ScalableTableViewDataManager.h */,
-				862610631F8B2DE3008A9ED7 /* ScalableTableViewDataManager.m */,
 			);
 			path = PYScalableTableView;
 			sourceTree = "<group>";
@@ -148,6 +150,23 @@
 			path = PYTestCell;
 			sourceTree = "<group>";
 		};
+		D019517287791E1F878F32F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				020BF7D21E3943E95A7663E1 /* Pods-PYScalableTableView.debug.xcconfig */,
+				0CE8C2B5622F5947B567F03B /* Pods-PYScalableTableView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE7B24656A62F06F80949080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				54E59ADEBE38E99F3F34C8A3 /* libPods-PYScalableTableView.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8642BA431F7A03E800032762 /* Build configuration list for PBXNativeTarget "PYScalableTableView" */;
 			buildPhases = (
+				D8AEC54BEB1E28E6B086EF55 /* [CP] Check Pods Manifest.lock */,
 				8642BA291F7A03E800032762 /* Sources */,
 				8642BA2A1F7A03E800032762 /* Frameworks */,
 				8642BA2B1F7A03E800032762 /* Resources */,
+				134B6F4AD1BC46CA492CD9E5 /* [CP] Embed Pods Frameworks */,
+				B12D97EB006F2E2173803012 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +236,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		134B6F4AD1BC46CA492CD9E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYScalableTableView/Pods-PYScalableTableView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B12D97EB006F2E2173803012 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYScalableTableView/Pods-PYScalableTableView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8AEC54BEB1E28E6B086EF55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8642BA291F7A03E800032762 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -221,7 +291,6 @@
 			files = (
 				86C2EFF01F7DFF6A001E2E02 /* PYTestBaseModel2.m in Sources */,
 				86C2EFE41F7DFBC2001E2E02 /* PYTestCell1.m in Sources */,
-				862610641F8B2DE3008A9ED7 /* ScalableTableViewDataManager.m in Sources */,
 				86C2EFE71F7DFBD4001E2E02 /* PYTestCell2.m in Sources */,
 				86C9FD041F7D07E400E91B87 /* ScalableTableView.m in Sources */,
 				86C2EFEA1F7DFBE3001E2E02 /* PYTestCell3.m in Sources */,
@@ -362,6 +431,7 @@
 		};
 		8642BA441F7A03E800032762 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 020BF7D21E3943E95A7663E1 /* Pods-PYScalableTableView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,6 +447,7 @@
 		};
 		8642BA451F7A03E800032762 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CE8C2B5622F5947B567F03B /* Pods-PYScalableTableView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

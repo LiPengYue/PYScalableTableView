@@ -31,4 +31,12 @@
     }
     return _modelArray;
 }
+
+
+- (NSString *)imageName {
+    if (!_imageName) {
+        _imageName = @"2";
+    }
+    return _imageName;
+}
 @end

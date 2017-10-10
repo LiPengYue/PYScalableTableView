@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface PYTestModel3 : NSObject
-
+@property (nonatomic,copy) NSString *imageName;
 @end

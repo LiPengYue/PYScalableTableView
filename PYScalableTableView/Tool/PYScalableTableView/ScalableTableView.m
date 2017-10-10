@@ -55,6 +55,8 @@ UITableViewDataSource
 - (void)setUP {
     self.delegate = self;
     self.dataSource = self;
+    self.estimatedRowHeight = 200;
+    self.rowHeight = UITableViewAutomaticDimension;
 }
 
 
@@ -88,10 +90,11 @@ UITableViewDataSource
     
     //如果有值 那么就对数据进行操作
     if (!isCurrentScalable) {
+        //当前需要展开
         NSIndexSet *indexSet = [[NSIndexSet alloc]initWithIndexesInRange: NSMakeRange(modelX + 1, modelLength)];
         [self.dataSourceArray insertObjects:subModelArray atIndexes:indexSet];
     }else{
-        //当前是收起的状态
+        //当前应该收起
         [self deleteDataSourceArrayContainsWithModel:model];
     }
     //修改数据
@@ -218,7 +221,7 @@ static NSString *const isScalableKey = @"PY_isScalable_SCALABLETABLEVIEW";
 }
 
 //MARK: 关于数据 处理
-//获取model的子model数据数组的count
+//获取model的子model数据数组
 - (NSArray *) getModelSubModelArray: (id)model{
     NSObject *modelObj = model;
     SEL modelArraySEL = NSSelectorFromString(@"modelArrayPropertyName");
