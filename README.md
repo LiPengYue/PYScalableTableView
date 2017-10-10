@@ -1,5 +1,4 @@
-
-
+![抽屉TableView.gif](http://upload-images.jianshu.io/upload_images/4185621-1ee9ccc95216fe7d.gif?imageMogr2/auto-orient/strip)
 #前言：
 经常遇到多层cell折叠展开的需求，于是写了一个工具组件。
 其中有几个特点：
