@@ -22,6 +22,7 @@
 		86C2EFF01F7DFF6A001E2E02 /* PYTestBaseModel2.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C2EFEF1F7DFF6A001E2E02 /* PYTestBaseModel2.m */; };
 		86C2EFF31F7DFF73001E2E02 /* PYTestModel3.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C2EFF21F7DFF73001E2E02 /* PYTestModel3.m */; };
 		86C9FD041F7D07E400E91B87 /* ScalableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C9FD031F7D07E400E91B87 /* ScalableTableView.m */; };
+		86E5EE471F8CD81F00B38813 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E5EE461F8CD81F00B38813 /* PushViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		86C2EFF21F7DFF73001E2E02 /* PYTestModel3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYTestModel3.m; sourceTree = "<group>"; };
 		86C9FD021F7D07E400E91B87 /* ScalableTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScalableTableView.h; sourceTree = "<group>"; };
 		86C9FD031F7D07E400E91B87 /* ScalableTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScalableTableView.m; sourceTree = "<group>"; };
+		86E5EE451F8CD81F00B38813 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		86E5EE461F8CD81F00B38813 /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				8642BA311F7A03E800032762 /* AppDelegate.m */,
 				8642BA331F7A03E800032762 /* ViewController.h */,
 				8642BA341F7A03E800032762 /* ViewController.m */,
+				86E5EE451F8CD81F00B38813 /* PushViewController.h */,
+				86E5EE461F8CD81F00B38813 /* PushViewController.m */,
 				8642BA361F7A03E800032762 /* Main.storyboard */,
 				8642BA391F7A03E800032762 /* Assets.xcassets */,
 				8642BA3B1F7A03E800032762 /* LaunchScreen.storyboard */,
@@ -291,6 +296,7 @@
 			files = (
 				86C2EFF01F7DFF6A001E2E02 /* PYTestBaseModel2.m in Sources */,
 				86C2EFE41F7DFBC2001E2E02 /* PYTestCell1.m in Sources */,
+				86E5EE471F8CD81F00B38813 /* PushViewController.m in Sources */,
 				86C2EFE71F7DFBD4001E2E02 /* PYTestCell2.m in Sources */,
 				86C9FD041F7D07E400E91B87 /* ScalableTableView.m in Sources */,
 				86C2EFEA1F7DFBE3001E2E02 /* PYTestCell3.m in Sources */,
@@ -437,7 +443,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NKTH3379KW;
 				INFOPLIST_FILE = PYScalableTableView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pengYueLi.PYScalableTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,7 +459,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NKTH3379KW;
 				INFOPLIST_FILE = PYScalableTableView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pengYueLi.PYScalableTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";

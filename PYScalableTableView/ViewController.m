@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ScalableTableView.h"
 #import "PYTestBaseModel1.h"
-
+#import "PushViewController.h"
 @interface ViewController ()
 
 @end
@@ -27,6 +27,12 @@
         [modelArray addObject:[PYTestBaseModel1 new]];
     }
     tableview.modelArray = modelArray;
+
+    __weak typeof (self)weakSelf = self;
+    [tableview registerClickCellFunc:^(id  _Nullable model, NSString * _Nonnull clickSelectorKey) {
+        PushViewController *vc = [[PushViewController alloc]init];
+        [weakSelf presentViewController:vc animated:true completion:nil];
+    }];
     [self.view addSubview:tableview];
 }
 

@@ -40,6 +40,11 @@ UITableViewDataSource
  * ·。1，
  */
 @property (nonatomic,strong) NSMutableArray *dataSourceArray;
+
+/**
+ * cell点击的方法
+ */
+@property (nonatomic,copy) void(^ _Nonnull registerClickCellBlock)(id _Nullable model, NSString * _Nonnull clickSelectorKey);
 @end
 
 
@@ -55,8 +60,16 @@ UITableViewDataSource
 - (void)setUP {
     self.delegate = self;
     self.dataSource = self;
-    self.estimatedRowHeight = 200;
+    self.estimatedRowHeight = 100;
     self.rowHeight = UITableViewAutomaticDimension;
+    
+
+    //声明tableView的位置 添加下面代码
+//    if (@available(iOS 11.0, *)) {
+//        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+////        self.contentInset = UIEdgeInsetsMake(64, 0, 49, 0);
+//        self.scrollIndicatorInsets = self.contentInset;
+//    }
 }
 
 
@@ -69,12 +82,23 @@ UITableViewDataSource
     id model = self.dataSourceArray[indexPath.row];
     NSString *cellID = [self getModelCellClassName:model];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: cellID forIndexPath:indexPath];
+    ///数据传递
+    __weak typeof(self) weakSelf = self;
+    [cell registerClickEventFunc:^(id model, NSString *selectorKey) {
+        NSLog(@"%@, -> %@",model,selectorKey);
+        if (weakSelf.registerClickCellBlock) {
+            weakSelf.registerClickCellBlock(model, selectorKey);
+        }
+    }];
+    
     [cell tableviewAssignedTheValueToCell:model];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    ///显示数据源的处理
     NSObject *model = cell.model;
     NSInteger modelX = indexPath.row;
     NSInteger modelLength = [self getModelRange:model].length;
@@ -315,7 +339,10 @@ static NSString *const isScalableKey = @"PY_isScalable_SCALABLETABLEVIEW";
             [self deleteDataSourceArrayContainsWithModel:obj];
         }
     }];
-    
+}
+
+- (void)registerClickCellFunc:(void (^)(id _Nullable, NSString * _Nonnull))registerClickCellBlock {
+    self.registerClickCellBlock = registerClickCellBlock;
 }
 
 @end

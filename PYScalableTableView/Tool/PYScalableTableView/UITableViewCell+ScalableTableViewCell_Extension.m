@@ -12,6 +12,9 @@
 @implementation UITableViewCell (ScalableTableViewCell_Extension)
 static NSString *const setModel = @"setModel_ScalableTableViewCell_Extension";
 static NSString *const setDataCallBackKey = @"setDataCallBackKey_ScalableTableViewCell_Extension";
+static NSString *const setDictionryKey = @"setDictionryKey_ScalableTableViewCell_Extension";
+static NSString *const setClickCellCallBackKey = @"setClickCellCallBackKey_ScalableTableViewCell_Extension";
+
 
 - (void) tableviewAssignedTheValueToCell:(id)model {
     if (![self getSetDataBlock]) {
@@ -42,6 +45,29 @@ static NSString *const setDataCallBackKey = @"setDataCallBackKey_ScalableTableVi
 }
 
 - (id) model {
-        return objc_getAssociatedObject(self, &setModel);
+    return objc_getAssociatedObject(self, &setModel);
 }
+
+
+
+
+
+///向外界发出点击事件
+- (void) cellClickEventBlockWithSelectorKey: (NSString *)selectorKey {
+    Type_cellClickEventBlock block = objc_getAssociatedObject(self, &setClickCellCallBackKey);
+    if (block) {    
+        block(self.model,selectorKey);
+    }
+}
+
+- (void)setCellClickEventBlock:(Type_cellClickEventBlock)cellClickEventBlock {
+    objc_setAssociatedObject(self, &setClickCellCallBackKey, cellClickEventBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+///外部tableview 调用
+- (void) registerClickEventFunc:(Type_cellClickEventBlock)cellClickEventBlock {
+    ///储存block
+    [self setCellClickEventBlock:cellClickEventBlock];
+}
+
 @end

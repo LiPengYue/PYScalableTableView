@@ -25,47 +25,10 @@
      return @"modelArray";
  }
  */
-@property (nonatomic,strong) NSArray *modelArray;
-- (void)encodeWithCoder:(nonnull NSCoder *)aCoder;
+@property (nonatomic,strong) NSArray * _Nullable modelArray;
 
-- (nullable NSIndexPath *)dataSourceIndexPathForPresentationIndexPath:(nullable NSIndexPath *)presentationIndexPath;
-
-- (NSInteger)dataSourceSectionIndexForPresentationSectionIndex:(NSInteger)presentationSectionIndex;
-
-- (void)performUsingPresentationValues:(nonnull void (^)(void))actionsToTranslate;
-
-- (nullable NSIndexPath *)presentationIndexPathForDataSourceIndexPath:(nullable NSIndexPath *)dataSourceIndexPath;
-
-- (NSInteger)presentationSectionIndexForDataSourceSectionIndex:(NSInteger)dataSourceSectionIndex;
-
-+ (nonnull instancetype)appearance;
-
-+ (nonnull instancetype)appearanceForTraitCollection:(nonnull UITraitCollection *)trait;
-
-+ (nonnull instancetype)appearanceForTraitCollection:(nonnull UITraitCollection *)trait whenContainedIn:(nullable Class<UIAppearanceContainer>)ContainerClass, ...;
-
-+ (nonnull instancetype)appearanceForTraitCollection:(nonnull UITraitCollection *)trait whenContainedInInstancesOfClasses:(nonnull NSArray<Class<UIAppearanceContainer>> *)containerTypes;
-
-+ (nonnull instancetype)appearanceWhenContainedIn:(nullable Class<UIAppearanceContainer>)ContainerClass, ...;
-
-+ (nonnull instancetype)appearanceWhenContainedInInstancesOfClasses:(nonnull NSArray<Class<UIAppearanceContainer>> *)containerTypes;
-
-- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection;
-
-- (CGPoint)convertPoint:(CGPoint)point fromCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace;
-
-- (CGPoint)convertPoint:(CGPoint)point toCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace;
-
-- (CGRect)convertRect:(CGRect)rect fromCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace;
-
-- (CGRect)convertRect:(CGRect)rect toCoordinateSpace:(nonnull id<UICoordinateSpace>)coordinateSpace;
-
-- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator;
-
-- (void)setNeedsFocusUpdate;
-
-- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context;
-
-- (void)updateFocusIfNeeded;
-
+/**
+ * cell点击的方法
+ */
+- (void) registerClickCellFunc: (void(^_Nullable)(id _Nullable model, NSString * _Nonnull clickSelectorKey))registerClickCellBlock;
 @end
