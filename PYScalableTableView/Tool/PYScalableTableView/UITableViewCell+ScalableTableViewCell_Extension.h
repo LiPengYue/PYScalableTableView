@@ -14,6 +14,7 @@
 - (void) tableviewAssignedTheValueToCell: (id)model;
 ///设置数据
 - (void) cellSetDataFunc: (void(^)(NSObject *model)) setDataCallBack;
+
 ///数据 的 model
 @property (nonatomic, readonly, strong) id model;
 
