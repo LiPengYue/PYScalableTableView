@@ -1,5 +1,4 @@
-
-![抽屉TableView.gif](http://upload-images.jianshu.io/upload_images/4185621-1ee9ccc95216fe7d.gif?imageMogr2/auto-orient/strip)
+![ScalableTablView.gif](http://upload-images.jianshu.io/upload_images/4185621-cf09588806387d45.gif?imageMogr2/auto-orient/strip)
 
 #前言：
 经常遇到多层cell折叠展开的需求，于是写了一个工具组件。
@@ -192,8 +191,13 @@ range
 ```
 **5. cell传递数据的扩展**
 ````
+
+@implementation UITableViewCell (ScalableTableViewCell_Extension)
 static NSString *const setModel = @"setModel_ScalableTableViewCell_Extension";
 static NSString *const setDataCallBackKey = @"setDataCallBackKey_ScalableTableViewCell_Extension";
+static NSString *const setDictionryKey = @"setDictionryKey_ScalableTableViewCell_Extension";
+static NSString *const setClickCellCallBackKey = @"setClickCellCallBackKey_ScalableTableViewCell_Extension";
+
 
 - (void) tableviewAssignedTheValueToCell:(id)model {
     if (![self getSetDataBlock]) {
@@ -224,10 +228,52 @@ static NSString *const setDataCallBackKey = @"setDataCallBackKey_ScalableTableVi
 }
 
 - (id) model {
-        return objc_getAssociatedObject(self, &setModel);
+    return objc_getAssociatedObject(self, &setModel);
 }
-````
 
+
+
+///向外界发出点击事件
+- (void) cellClickEventBlockWithSelectorKey: (NSString *)selectorKey {
+    Type_cellClickEventBlock block = objc_getAssociatedObject(self, &setClickCellCallBackKey);
+    if (block) {    
+        block(self.model,selectorKey);
+    }
+}
+
+- (void)setCellClickEventBlock:(Type_cellClickEventBlock)cellClickEventBlock {
+    objc_setAssociatedObject(self, &setClickCellCallBackKey, cellClickEventBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+///外部tableview 调用
+- (void) registerClickEventFunc:(Type_cellClickEventBlock)cellClickEventBlock {
+    ///储存block
+    [self setCellClickEventBlock:cellClickEventBlock];
+}
+
+@end
+
+````
+---
+内容扩展更新 ---
+#cell 与tableview之间的数据传递通道
+**1、cell内部点击事件的传递调用**
+```
+[self cellClickEventBlockWithSelectorKey:@"clickButton1"];
+```
+**2、tableView中注册cell的点击事件调用**
+```
+[self.tableview registerClickCellFunc:^(id  _Nullable model, NSString * _Nonnull clickSelectorKey) {
+//代码处理
+}];
+```
+#实现一行代码实现收缩效果
+给tableView设置一个代理，并实现下列代码；
+```
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableview didSelectRowAtIndexPath:indexPath];
+}
+```
 ---
 [如果不太明白，运行一波代码就都懂喽！](https://github.com/LiPengYue/PYScalableTableView)
 如果感觉提供了一个不一样的思路，请来一波红心，是对我最大的鼓励。
