@@ -31,4 +31,16 @@
  * cell点击的方法
  */
 - (void) registerClickCellFunc: (void(^_Nullable)(id _Nullable model, NSString * _Nonnull clickSelectorKey))registerClickCellBlock;
+
+
+/**
+ 实现伸缩的方法
+ 设置一个Delegate，然后实现
+ - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ [self.tableview didSelectRowAtIndexPath:indexPath];
+ }
+ 就可以实现伸缩效果
+ @param indexPath 点击的cell在tableview中的位置
+ */
+- (void) didSelectRowAtIndexPath:(NSIndexPath *_Nullable)indexPath;
 @end

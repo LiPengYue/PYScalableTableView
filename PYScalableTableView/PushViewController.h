@@ -10,5 +10,6 @@
 
 @interface PushViewController : UIViewController
 @property (nonatomic,copy) NSString *text;
+@property (nonatomic,copy) NSString *eventName;
 @property (nonatomic,copy) NSString *imageName;
 @end

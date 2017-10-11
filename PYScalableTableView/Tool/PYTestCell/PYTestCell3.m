@@ -54,13 +54,13 @@
     [self.contentView addSubview:self.imageV];
     
     self.button1 = [[UIButton alloc]init];
-    [self.button1 setTitle:@"点击事件1" forState: UIControlStateNormal];
+    [self.button1 setTitle:@"事件1" forState: UIControlStateNormal];
     [self.button1 addTarget:self action:@selector(clickButton1:) forControlEvents:UIControlEventTouchUpInside];
     self.button1.backgroundColor = [UIColor colorWithRed:.5 green:.9 blue:.6 alpha:0.7];
     [self.contentView addSubview:self.button1];
     
     self.button2 = [[UIButton alloc]init];
-    [self.button2 setTitle:@"点击事件2" forState: UIControlStateNormal];
+    [self.button2 setTitle:@"事件2" forState: UIControlStateNormal];
     [self.button2 addTarget:self action:@selector(clickButton2:) forControlEvents:UIControlEventTouchUpInside];
     self.button2.backgroundColor = [UIColor colorWithRed:.5 green:.9 blue:.6 alpha:0.7];
     [self.contentView addSubview:self.button2];
@@ -80,7 +80,6 @@
         make.centerY.equalTo(self.contentView.mas_centerY);
         make.left.equalTo(self.labelV.mas_right).offset(10);
         make.height.equalTo(@20);
-        make.width.equalTo(@90);
     }];
     
     [self.button2 mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -95,8 +95,8 @@ UITableViewDataSource
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+- (void) didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
     
     ///显示数据源的处理
     NSObject *model = cell.model;

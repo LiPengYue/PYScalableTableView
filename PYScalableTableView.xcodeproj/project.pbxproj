@@ -12,7 +12,6 @@
 		8642BA351F7A03E800032762 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8642BA341F7A03E800032762 /* ViewController.m */; };
 		8642BA381F7A03E800032762 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8642BA361F7A03E800032762 /* Main.storyboard */; };
 		8642BA3A1F7A03E800032762 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8642BA391F7A03E800032762 /* Assets.xcassets */; };
-		8642BA3D1F7A03E800032762 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8642BA3B1F7A03E800032762 /* LaunchScreen.storyboard */; };
 		8642BA401F7A03E800032762 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8642BA3F1F7A03E800032762 /* main.m */; };
 		86A79D161F7E695400F0F3C2 /* UITableViewCell+ScalableTableViewCell_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 86A79D151F7E695400F0F3C2 /* UITableViewCell+ScalableTableViewCell_Extension.m */; };
 		86C2EFE41F7DFBC2001E2E02 /* PYTestCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C2EFE31F7DFBC2001E2E02 /* PYTestCell1.m */; };
@@ -29,6 +28,7 @@
 		020BF7D21E3943E95A7663E1 /* Pods-PYScalableTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYScalableTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYScalableTableView/Pods-PYScalableTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		0CE8C2B5622F5947B567F03B /* Pods-PYScalableTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYScalableTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYScalableTableView/Pods-PYScalableTableView.release.xcconfig"; sourceTree = "<group>"; };
 		54E59ADEBE38E99F3F34C8A3 /* libPods-PYScalableTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYScalableTableView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		861BA3A21F8E0EE600712F3E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8642BA2D1F7A03E800032762 /* PYScalableTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYScalableTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8642BA301F7A03E800032762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8642BA311F7A03E800032762 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,7 +36,6 @@
 		8642BA341F7A03E800032762 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8642BA371F7A03E800032762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8642BA391F7A03E800032762 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8642BA3C1F7A03E800032762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8642BA3E1F7A03E800032762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8642BA3F1F7A03E800032762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86A79D141F7E695400F0F3C2 /* UITableViewCell+ScalableTableViewCell_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ScalableTableViewCell_Extension.h"; sourceTree = "<group>"; };
@@ -100,8 +99,8 @@
 				86E5EE451F8CD81F00B38813 /* PushViewController.h */,
 				86E5EE461F8CD81F00B38813 /* PushViewController.m */,
 				8642BA361F7A03E800032762 /* Main.storyboard */,
+				861BA3A21F8E0EE600712F3E /* LaunchScreen.storyboard */,
 				8642BA391F7A03E800032762 /* Assets.xcassets */,
-				8642BA3B1F7A03E800032762 /* LaunchScreen.storyboard */,
 				8642BA3E1F7A03E800032762 /* Info.plist */,
 				8642BA3F1F7A03E800032762 /* main.m */,
 			);
@@ -233,7 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8642BA3D1F7A03E800032762 /* LaunchScreen.storyboard in Resources */,
 				8642BA3A1F7A03E800032762 /* Assets.xcassets in Resources */,
 				8642BA381F7A03E800032762 /* Main.storyboard in Resources */,
 			);
@@ -318,14 +316,6 @@
 				8642BA371F7A03E800032762 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8642BA3B1F7A03E800032762 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8642BA3C1F7A03E800032762 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

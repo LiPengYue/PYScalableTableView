@@ -8,7 +8,6 @@
 
 #import "UITableViewCell+ScalableTableViewCell_Extension.h"
 #import <objc/runtime.h>
-
 @implementation UITableViewCell (ScalableTableViewCell_Extension)
 static NSString *const setModel = @"setModel_ScalableTableViewCell_Extension";
 static NSString *const setDataCallBackKey = @"setDataCallBackKey_ScalableTableViewCell_Extension";
@@ -18,7 +17,7 @@ static NSString *const setClickCellCallBackKey = @"setClickCellCallBackKey_Scala
 
 - (void) tableviewAssignedTheValueToCell:(id)model {
     if (![self getSetDataBlock]) {
-           NSLog(@"🔥%@,objc_getAssociatedObject(self, &setDataCallBackKey); 获取不到值",self);
+        NSLog(@"🔥%@,objc_getAssociatedObject(self, &setDataCallBackKey); 获取不到值",self);
         return;
     }
     void (^setDataCallBack)(id) = [self getSetDataBlock];
@@ -50,12 +49,10 @@ static NSString *const setClickCellCallBackKey = @"setClickCellCallBackKey_Scala
 
 
 
-
-
 ///向外界发出点击事件
 - (void) cellClickEventBlockWithSelectorKey: (NSString *)selectorKey {
     Type_cellClickEventBlock block = objc_getAssociatedObject(self, &setClickCellCallBackKey);
-    if (block) {    
+    if (block) {
         block(self.model,selectorKey);
     }
 }
