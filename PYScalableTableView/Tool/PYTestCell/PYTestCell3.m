@@ -62,7 +62,7 @@
     self.button2 = [[UIButton alloc]init];
     [self.button2 setTitle:@"事件2" forState: UIControlStateNormal];
     [self.button2 addTarget:self action:@selector(clickButton2:) forControlEvents:UIControlEventTouchUpInside];
-    self.button2.backgroundColor = [UIColor colorWithRed:.5 green:.9 blue:.6 alpha:0.7];
+    self.button2.backgroundColor = [UIColor colorWithRed:.5 green:.9 blue:.6 alpha :0.7];
     [self.contentView addSubview:self.button2];
     
     [self.imageV mas_makeConstraints:^(MASConstraintMaker *make) {
